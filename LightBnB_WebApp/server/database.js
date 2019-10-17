@@ -76,7 +76,7 @@ exports.getAllReservations = getAllReservations;
 const getAllProperties = function(options, limit = 10) {
   return pool.query(`
   SELECT *
-  FROM property_reviews
+  FROM properties
   LIMIT $1;`, [limit])
     .then(res => res.rows);
     
