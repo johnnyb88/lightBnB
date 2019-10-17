@@ -1,8 +1,11 @@
 module.exports = function(router, database) {
-
+  console.log(database);
   router.get('/properties', (req, res) => {
     database.getAllProperties(req.query)
-      .then(properties => res.send({properties}))
+      .then(properties => {
+        console.log(properties);
+        res.send({ properties });
+      })
       .catch(e => {
         console.error(e);
         res.send(e);
