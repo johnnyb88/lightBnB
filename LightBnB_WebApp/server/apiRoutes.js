@@ -3,7 +3,6 @@ module.exports = function(router, database) {
   router.get('/properties', (req, res) => {
     database.getAllProperties(req.query)
       .then(properties => {
-        console.log(properties);
         res.send({ properties });
       })
       .catch(e => {
